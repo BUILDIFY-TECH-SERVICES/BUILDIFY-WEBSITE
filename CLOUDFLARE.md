@@ -39,6 +39,51 @@ That runs `wrangler pages deploy out` — static only, no OpenNext.
 
 **Project name:** Cloudflare project must be named `buildify-website` (matches `wrangler.toml`), or change the name in `package.json` → `deploy:cloudflare` script to match your project.
 
+---
+
+## Fix: `Authentication error [code: 10000]` on deploy
+
+Build works; **Wrangler deploy** fails because `CLOUDFLARE_API_TOKEN` lacks **Pages deploy** permission or targets the **wrong account** (personal vs `BUILDIFY-TECH-SERVICES` org).
+
+### 1. Create a new API token
+
+1. [Cloudflare API Tokens](https://dash.cloudflare.com/profile/api-tokens) → **Create Token** → **Custom token**
+2. **Permissions:**
+
+| Permission | Access |
+|------------|--------|
+| Account → **Cloudflare Pages** | **Edit** |
+| Account → **Account Settings** | Read |
+| User → **User Details** | Read |
+
+3. **Account resources:** include the account where the Pages project lives:
+   - **BUILDIFY-TECH-SERVICES** (org), **or**
+   - your personal account — if the project is there
+4. Create token → copy it once.
+
+### 2. Add secrets in Cloudflare (project → Settings → Environment variables)
+
+| Name | Type | Value |
+|------|------|--------|
+| `CLOUDFLARE_API_TOKEN` | **Secret** | paste new token |
+| `CLOUDFLARE_ACCOUNT_ID` | Plain or Secret | Account ID from Workers & Pages overview (org or personal) |
+
+Use the **Account ID** for the same account that owns the `buildify-website` Pages project — not necessarily the personal ID from build logs unless the project is under personal account.
+
+### 3. Redeploy
+
+Retry deployment. Deploy step should pass after token + account ID match.
+
+### Optional: deploy script with explicit account
+
+If needed, change deploy command to:
+
+```bash
+npx wrangler pages deploy out --project-name=buildify-website
+```
+
+and ensure `CLOUDFLARE_ACCOUNT_ID` is set in env (Wrangler reads it automatically).
+
 If there is no way to clear **Deploy command** or **Build command**, **delete this project** and create a new one:
 
 - **Create** → **Pages** → **Connect to Git** → `BUILDIFY-WEBSITE`
