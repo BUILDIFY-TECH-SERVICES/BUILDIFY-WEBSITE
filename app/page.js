@@ -442,6 +442,58 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+
+              {/* Profile 3 - Left Staggered */}
+              <div className="slide-left team-profile-card glass-card flex flex-col md:flex-row gap-6 md:gap-8 p-6 md:p-10 rounded-2xl w-full md:w-[85%] self-start border-l-4 border-l-tertiary/30">
+                <div className="w-32 h-32 md:w-56 md:h-56 rounded-2xl overflow-hidden shrink-0 border border-white/10 flex items-center justify-center bg-gradient-to-br from-tertiary/30 to-primary/20 grayscale hover:grayscale-0 transition-all duration-1000">
+                  <span
+                    style={{
+                      fontFamily: '"Space Grotesk", sans-serif',
+                      fontSize: "clamp(40px, 6vw, 72px)",
+                      fontWeight: 700,
+                      letterSpacing: "-0.02em",
+                    }}
+                    className="text-[#e6e0e9] select-none"
+                  >
+                    BC
+                  </span>
+                </div>
+                <div className="flex flex-col justify-center">
+                  <h4
+                    style={{
+                      fontFamily: '"Space Grotesk", sans-serif',
+                      fontSize: "clamp(24px, 3vw, 40px)",
+                      lineHeight: 1.2,
+                      fontWeight: 600,
+                    }}
+                    className="mb-2"
+                  >
+                    Bhupendra Singh Chauhan
+                  </h4>
+                  <p
+                    style={{
+                      fontFamily: '"Geist", sans-serif',
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      letterSpacing: "0.3em",
+                    }}
+                    className="text-tertiary mb-6 uppercase"
+                  >
+                    Lead ML Engineer
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: '"Geist", sans-serif',
+                      fontSize: "18px",
+                      lineHeight: 1.6,
+                      fontWeight: 400,
+                    }}
+                    className="text-[#cbc4d2] leading-relaxed"
+                  >
+                    IIT (ISM) Dhanbad Silver Medalist engineering end-to-end AI platforms — from custom reinforcement learning environments and RLHF pipelines to production-grade RAG systems that scale seamlessly from research to deployment.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
