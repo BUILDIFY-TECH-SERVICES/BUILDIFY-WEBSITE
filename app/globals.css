@@ -53,10 +53,28 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   background-color: #050505;
   color: #e6e0e9;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+.page-root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Clip fixed decorative layers so blurs/spheres never widen the page */
+.parallax-layer,
+#scroll-wave-container {
+  overflow: hidden;
 }
 
 /* ─── Custom Cursor ──────────────────────────────────── */
@@ -1318,6 +1336,32 @@ body {
       0 10px 36px rgba(0, 0, 0, 0.5),
       0 0 40px rgba(77, 68, 101, 0.18);
   }
+}
+
+.footer-watermark-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.footer-watermark {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(100px, 25vw, 360px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  background: linear-gradient(to top, rgba(207, 188, 255, 0.5), rgba(207, 188, 255, 0.1), transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: opacity 0.3s;
 }
 
 @media (prefers-reduced-motion: reduce) {
