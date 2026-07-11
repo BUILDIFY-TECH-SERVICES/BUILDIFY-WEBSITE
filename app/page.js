@@ -168,9 +168,9 @@ export default function Home() {
 
       <Navbar />
 
-      <main className="relative blueprint-grid">
+      <main className="page-root relative blueprint-grid">
         {/* Background Spheres */}
-        <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="parallax-layer fixed inset-0 pointer-events-none z-0">
           <div className="parallax-sphere absolute top-[10%] left-[5%] w-[400px] h-[400px] bg-primary rounded-full"></div>
           <div className="parallax-sphere absolute bottom-[20%] right-[10%] w-[300px] h-[300px] bg-secondary rounded-full"></div>
         </div>
@@ -194,7 +194,7 @@ export default function Home() {
               </h2>
               <div className="w-24 h-1 bg-primary rounded-full"></div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {/* MVP Creation Card */}
               <div className="glass-card p-6 md:p-10 rounded-xl flex flex-col gap-4 md:gap-6">
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20 text-primary">
@@ -320,6 +320,90 @@ export default function Home() {
                   <span className="material-symbols-outlined text-secondary cursor-pointer hover:translate-x-2 transition-transform">arrow_forward</span>
                 </div>
               </div>
+
+              {/* App Development Card */}
+              <div className="glass-card p-6 md:p-10 rounded-xl flex flex-col gap-4 md:gap-6">
+                <div className="w-14 h-14 rounded-lg bg-primary-container/10 flex items-center justify-center border border-primary-container/20 text-on-primary-container">
+                  <span className="material-symbols-outlined text-4xl">smartphone</span>
+                </div>
+                <h3
+                  style={{
+                    fontFamily: '"Space Grotesk", sans-serif',
+                    fontSize: "clamp(22px, 2.5vw, 32px)",
+                    lineHeight: 1.3,
+                    fontWeight: 600,
+                  }}
+                >
+                  App Development
+                </h3>
+                <p
+                  style={{
+                    fontFamily: '"Geist", sans-serif',
+                    fontSize: "16px",
+                    lineHeight: 1.6,
+                    fontWeight: 400,
+                  }}
+                  className="text-[#cbc4d2] leading-relaxed"
+                >
+                  iOS and Android experiences with polished UX, offline-ready flows, and store-ready releases built for retention.
+                </p>
+                <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                  <span
+                    style={{
+                      fontFamily: '"Geist", sans-serif',
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      letterSpacing: "-0.01em",
+                    }}
+                    className="text-on-primary-container"
+                  >
+                    PHASE 04
+                  </span>
+                  <span className="material-symbols-outlined text-on-primary-container cursor-pointer hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+
+              {/* Game Development Card */}
+              <div className="glass-card p-6 md:p-10 rounded-xl flex flex-col gap-4 md:gap-6">
+                <div className="w-14 h-14 rounded-lg bg-tertiary-container/10 flex items-center justify-center border border-tertiary-container/20 text-tertiary-container">
+                  <span className="material-symbols-outlined text-4xl">sports_esports</span>
+                </div>
+                <h3
+                  style={{
+                    fontFamily: '"Space Grotesk", sans-serif',
+                    fontSize: "clamp(22px, 2.5vw, 32px)",
+                    lineHeight: 1.3,
+                    fontWeight: 600,
+                  }}
+                >
+                  Game Development
+                </h3>
+                <p
+                  style={{
+                    fontFamily: '"Geist", sans-serif',
+                    fontSize: "16px",
+                    lineHeight: 1.6,
+                    fontWeight: 400,
+                  }}
+                  className="text-[#cbc4d2] leading-relaxed"
+                >
+                  Playable prototypes through full builds—gameplay systems, multiplayer, and live ops tuned for engagement and scale.
+                </p>
+                <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                  <span
+                    style={{
+                      fontFamily: '"Geist", sans-serif',
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      letterSpacing: "-0.01em",
+                    }}
+                    className="text-tertiary-container"
+                  >
+                    PHASE 05
+                  </span>
+                  <span className="material-symbols-outlined text-tertiary-container cursor-pointer hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -335,10 +419,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505] pointer-events-none z-0"></div>
 
           {/* Extremely Large Background Text */}
-          <div className="absolute inset-x-0 bottom-0 flex justify-center items-end pointer-events-none select-none z-0">
+          <div className="footer-watermark-wrap absolute inset-x-0 bottom-0 flex justify-center items-end pointer-events-none select-none z-0">
             <span
               id="footer-watermark"
-              className="text-[clamp(100px,25vw,360px)] font-display-lg font-bold leading-none tracking-[-0.05em] block text-transparent bg-clip-text bg-gradient-to-t from-primary/50 via-primary/10 to-transparent transition-opacity duration-300"
+              className="footer-watermark font-display-lg font-bold leading-none text-transparent bg-clip-text bg-gradient-to-t from-primary/50 via-primary/10 to-transparent transition-opacity duration-300"
               style={{ opacity: 0 }}
             >
               BUILDIFY
