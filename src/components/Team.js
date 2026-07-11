@@ -60,7 +60,7 @@ export default function Team() {
           {/* Profile 1 - Left Staggered (Bhupendra) */}
           <TeamProfileCard
             id="bhupendra"
-            name="Bhupendra"
+            name="Bhupendra Singh Chauhan"
             designation="Founder & CEO"
             bio="IIT (ISM) Dhanbad Silver Medalist engineering end-to-end AI platforms — from custom reinforcement learning environments and RLHF pipelines to production-grade RAG systems that scale seamlessly from research to deployment."
             image="/images/bhupendra.png"
