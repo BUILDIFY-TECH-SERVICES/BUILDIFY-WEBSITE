@@ -11,7 +11,7 @@ const ACCENT_FILL = {
 export default function CircularRevolvingText({ text, accent = "primary", ringId }) {
   const pathId = `team-ring-path-${ringId ?? "default"}`;
   const fill = ACCENT_FILL[accent] ?? ACCENT_FILL.primary;
-  const label = `${text.toUpperCase()} \u2022 ${text.toUpperCase()} \u2022 ${text.toUpperCase()} \u2022 `;
+  const label = `${text.toUpperCase()} \u2022 ${text.toUpperCase()} \u2022 ${text.toUpperCase()} \u2022 ${text.toUpperCase()} \u2022 ${text.toUpperCase()} \u2022 `;
 
   return (
     <div className={`team-ring-wrap team-ring-wrap--${accent}`} aria-hidden="true">
@@ -23,7 +23,7 @@ export default function CircularRevolvingText({ text, accent = "primary", ringId
         <defs>
           <path
             id={pathId}
-            d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"
+            d="M 100,100 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"
             fill="none"
           />
         </defs>

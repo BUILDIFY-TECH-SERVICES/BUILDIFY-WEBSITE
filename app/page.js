@@ -180,7 +180,7 @@ export default function Home() {
         {/* Services Section */}
         <section id="capabilities" className="zoom-section py-16 md:py-20 relative z-10 px-4 md:px-6">
           <div className="max-w-[1280px] mx-auto">
-            <div className="mb-10 md:mb-16 text-center md:text-left">
+            <div className="mb-10 md:mb-16 text-center">
               <h2
                 style={{
                   fontFamily: '"Space Grotesk", sans-serif',
